@@ -1,7 +1,7 @@
 FROM andrewyatz/webdocker
 
-ENV HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE=/home/linuxbrew/moonshine
-RUN mkdir -p $HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE
+ENV ENSEMBL_MOONSHINE_ARCHIVE=/home/linuxbrew/moonshine
+RUN mkdir -p $ENSEMBL_MOONSHINE_ARCHIVE
 
 RUN brew install ensembl/cask/web-perllibs
 RUN brew install ensembl/cask/web-gui
