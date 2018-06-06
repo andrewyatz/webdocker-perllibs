@@ -1,7 +1,7 @@
 FROM andrewyatz/webdocker
 
-ENV ENSEMBL_MOONSHINE_ARCHIVE=/home/linuxbrew/moonshine
-RUN mkdir -p $ENSEMBL_MOONSHINE_ARCHIVE
+ENV HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE=/home/linuxbrew/moonshine
+RUN mkdir -p $HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE
 
 RUN brew install ensembl/cask/web-perllibs
 RUN brew install ensembl/cask/web-gui
@@ -46,7 +46,8 @@ echo export MANPATH >> $HOME/.profile && \
 echo export INFOPATH >> $HOME/.profile && \
 echo export PERL5LIB=${PERL5LIB} >> $HOME/.profile && \
 echo export SHARE_PATH=$HOME/paths >> $HOME/.profile && \
-echo export ENSEMBL_MOONSHINE_ARCHIVE=${ENSEMBL_MOONSHINE_ARCHIVE}} >> $HOME/.profile
+echo export ENSEMBL_MOONSHINE_ARCHIVE=${HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE}} >> $HOME/.profile && \
+echo export HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE=${HOMEBREW_ENSEMBL_MOONSHINE_ARCHIVE}} >> $HOME/.profile
 
 # Symlink binaries into share path
 RUN mkdir -p $SHARE_PATH && \
