@@ -7,7 +7,7 @@ RUN brew install ensembl/cask/web-perllibs
 RUN brew install ensembl/cask/web-gui
 
 # Need to do this to ignore a pcre error
-RUN brew install ensembl/ensembl/blast; exit 0
+RUN brew install ensembl/external/blast; exit 0
 
 # Go for remaining dependencies from brew
 RUN brew install ensembl/cask/web-bifo
